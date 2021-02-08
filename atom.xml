@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-02-07T07:57:48.424Z</updated>
+  <updated>2021-02-07T14:00:20.711Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>坑点</title>
+    <link href="http://yoursite.com/2021/02/07/%E5%9D%91%E7%82%B9/"/>
+    <id>http://yoursite.com/2021/02/07/%E5%9D%91%E7%82%B9/</id>
+    <published>2021-02-07T12:57:55.000Z</published>
+    <updated>2021-02-07T14:00:20.711Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-回溯算法中-List-lt-List-lt-gt-gt-加入时需创建"><a href="#1-回溯算法中-List-lt-List-lt-gt-gt-加入时需创建" class="headerlink" title="1. 回溯算法中 List&lt;List&lt;&gt;&gt; 加入时需创建"></a>1. 回溯算法中 List&lt;List&lt;&gt;&gt; 加入时需创建</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"> LinkedList&lt;Integer&gt; cur = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(TreeNode root, <span class="keyword">int</span> targetSum, <span class="keyword">int</span> sum, LinkedList&lt;Integer&gt; cur)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="title">if</span><span class="params">(sum == targetSum &amp;&amp; root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>)</span></span>&#123;</span><br><span class="line">            <span class="comment">//坑点 cur 是引用类型 在向list中添加时需要创建</span></span><br><span class="line">            list.add(<span class="keyword">new</span> LinkedList&lt;&gt;(cur));</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//ArrayList 添加为add(val) 删除为 remove(cur.size -1)</span></span><br><span class="line"><span class="comment">//LinkedList 添加为add(val) 删除为 removeLast()</span></span><br></pre></td></tr></table></figure><h3 id="2-测试数据中有Integer最值时使用Long-MAX-VALUE"><a href="#2-测试数据中有Integer最值时使用Long-MAX-VALUE" class="headerlink" title="2. 测试数据中有Integer最值时使用Long.MAX_VALUE"></a>2. 测试数据中有Integer最值时使用Long.MAX_VALUE</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> isValid(root,Long.MIN_VALUE,Long.MAX_VALUE);</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(TreeNode root,<span class="keyword">long</span> min,<span class="keyword">long</span> max)</span></span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1-回溯算法中-List-lt-List-lt-gt-gt-加入时需创建&quot;&gt;&lt;a href=&quot;#1-回溯算法中-List-lt-List-lt-gt-gt-加入时需创建&quot; class=&quot;headerlink&quot; title=&quot;1. 回溯算法中 List&amp;lt;Lis</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>算法框架</title>
